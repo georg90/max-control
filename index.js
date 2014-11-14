@@ -172,7 +172,7 @@ MaxCube.prototype.parseCommandMetadata = function (payload) {
     var roomData = {};
     roomData.roomId = parseInt(decodedPayload[currentIndex].toString(10));
     var room_length = parseInt(decodedPayload[currentIndex + 1].toString(10));
-    roomData.name = decodedPayload.slice(currentIndex + 2, currentIndex + 2 + room_length).toString('utf-8');
+    roomData.name = String.fromCharCode.apply(null, decodedPayload.slice(currentIndex + 2, currentIndex + 2 + room_length));
     roomData.groupAddress = decodedPayload.slice(currentIndex + 2 + room_length, currentIndex + room_length + 5).toString('hex');
     this.rooms.push(roomData);
     currentIndex = currentIndex + room_length + 5;
