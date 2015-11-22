@@ -2,7 +2,11 @@
 
 > Control the ELV Max! heating system with node.js
 
-## Usage
+## note
+
+max-control is a fork of [ivesdebruycker/maxcube](https://github.com/ivesdebruycker/maxcube), which seems to be actively developed, so please use it instead of this fork.
+
+## usage
 
 ```
 var MaxCube = require('./index');
